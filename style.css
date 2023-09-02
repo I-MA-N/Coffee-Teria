@@ -1,0 +1,209 @@
+/* ---> Color Pallete */
+:root {
+    --main-color: #512B06;
+    --second-color: #FFFFFF;
+    --third-color: #FF8400;
+}
+
+/* ---> Costumize buttons */
+.btn-primary {
+    background-color: var(--main-color);
+    color: var(--second-color);
+    border: .2rem solid var(--second-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    border: .2rem solid var(--main-color);
+}
+
+.btn:first-child:active,
+.btn-primary:focus-visible {
+    background-color: var(--main-color);
+    border-color: #894A0A;
+    color: var(--second-color);
+}
+
+.btn-primary:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(255, 132, 0, .5)
+}
+
+.btn-med {
+    --bs-btn-padding-y: .5rem;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-font-size: 1rem;
+}
+
+/* ---> Costumize borders */
+.border-primary {
+    border-color: var(--main-color) !important;
+}
+
+.border-secondary {
+    border-color: var(--second-color) !important;
+}
+
+/* ---> Costumize texts */
+.text-primary {
+    color: var(--main-color) !important;
+}
+
+.text-secondary {
+    color: var(--second-color) !important;
+}
+
+/* ---> Costumize backgrounds */
+.bg-primary {
+    background-color: var(--main-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--second-color) !important;
+}
+
+/* ---> Costumize tooltips */
+.custom-tooltip {
+    --bs-tooltip-bg: var(--third-color);
+}
+
+
+/* ---> Costumize nav bar */
+#navbar {
+    background-color: var(--main-color);
+}
+
+#navbar svg {
+    color: white;
+}
+
+#navbar a {
+    color: var(--second-color) !important;
+}
+
+#navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* ---> Making animation styles for header */
+#header {
+    padding: 60px 0;
+}
+
+#header .special-texts span {
+    animation: chagneOpacity 3s infinite alternate;
+}
+
+#header .special-texts::before {
+    content: "Enjoy";
+    font-size: inherit;
+    font-weight: inherit;
+    position: absolute;
+    animation: chagneOpacity 3s infinite 3s alternate;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+#header .special-text-2::before {
+    content: "Drinking";
+}
+
+@keyframes chagneOpacity {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* ---> Set none display to card content */
+#typesOfDrinks .card-content {
+    display: none;
+}
+
+/* ---> Responsive comments section */
+#comments .row {
+    margin-right: 0;
+}
+
+@media (max-width: 1000px) {
+    #comments h2 {
+        color: var(--second-color);
+    }
+}
+
+@media (max-width: 576px) {
+    #comments img {
+        display: none;
+    }
+    #comments .translate-middle {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: translate(0) !important;
+    }
+    #comments h2 {
+        color: #000000;
+    }
+}
+
+/* ---> Set profile image for costumers */
+#comments .accordion-button::before {
+    content: url(./images/person-icon.png);
+    margin-right: .5rem;
+}
+
+/* ---> Costumize focusing on buttons */
+#comments .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 132, 0, .5);
+    border-color: var(--third-color);
+    background-color: rgba(255, 132, 0, .25);
+}
+
+/* ---> Set complete width for inputs in small devices */
+@media (max-width: 767px) {
+    #contactUs .w-75 {
+        width: 100% !important;
+    }
+}
+
+/* ---> Costumize focusing on inputs and textareas */
+#contactUs .form-control:focus,
+#contactUs .form-select:focus,
+#joinUs .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 132, 0, .5);
+    border-color: var(--third-color);
+}
+
+#footer .social-anchors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+    opacity: 0;
+}
+
+#footer .main-anchor {
+    position: relative;
+    bottom: 0;
+    transition: all 1s;
+}
+
+#footer .position-relative:hover .main-anchor {
+    bottom: 20px;
+}
+
+#footer .position-relative:hover .social-anchors {
+    opacity: 1;
+    top: 0px;
+    left: 50px;
+}
+
+#footer .position-relative:hover .social-anchors:nth-child(2) {
+    opacity: 1;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#footer .position-relative:hover .social-anchors:nth-child(3) {
+    opacity: 1;
+    top: 0px;
+    left: -30px;
+}
